@@ -47,7 +47,7 @@ workflows:
           requires:
             - build
           filters:
+            tags:
+              only: /^v.*/
             branches:
               ignore: /.*/
-            tags:
-              only: /v[0-9]+(\.[0-9]+)*(-.*)*/
