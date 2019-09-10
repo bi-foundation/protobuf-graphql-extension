@@ -46,8 +46,3 @@ workflows:
       - github-release:
           requires:
             - build
-          filters:
-            tags:
-              only: /^v.*/
-            branches:
-              ignore: /.*/
