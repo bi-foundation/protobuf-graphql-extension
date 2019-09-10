@@ -7,7 +7,7 @@ import (
 	bytes "bytes"
 	database_sql_driver "database/sql/driver"
 	fmt "fmt"
-	_ "github.com/bi-foundation/protobuf-graphql-extension/opseeproto"
+	_ "github.com/bi-foundation/protobuf-graphql-extension/graphqlproto"
 	_ "github.com/gogo/protobuf/gogoproto"
 	proto "github.com/gogo/protobuf/proto"
 	github_com_graphql_go_graphql "github.com/graphql-go/graphql"

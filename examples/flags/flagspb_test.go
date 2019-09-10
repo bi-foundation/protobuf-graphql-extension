@@ -5,7 +5,7 @@ package flavortown_flags
 
 import (
 	fmt "fmt"
-	_ "github.com/bi-foundation/protobuf-graphql-extension/opseeproto"
+	_ "github.com/bi-foundation/protobuf-graphql-extension/graphqlproto"
 	_ "github.com/gogo/protobuf/gogoproto"
 	github_com_gogo_protobuf_jsonpb "github.com/gogo/protobuf/jsonpb"
 	github_com_gogo_protobuf_proto "github.com/gogo/protobuf/proto"

@@ -6,23 +6,23 @@ import (
 	"testing"
 
 	dessert "github.com/bi-foundation/protobuf-graphql-extension/examples/dessert"
-	opsee_types "github.com/bi-foundation/protobuf-graphql-extension/opseeproto/types"
+	graphqlproto_types "github.com/bi-foundation/protobuf-graphql-extension/graphqlproto/types"
 	"github.com/graphql-go/graphql"
 	"github.com/stretchr/testify/assert"
 )
 
 func init() {
-	perms := opsee_types.NewPermissionsBitmap("peas", "cornbread", "nothing", "another thing", "???")
-	opsee_types.PermissionsRegistry.Register("flavortown", perms)
+	perms := graphqlproto_types.NewPermissionsBitmap("peas", "cornbread", "nothing", "another thing", "???")
+	graphqlproto_types.PermissionsRegistry.Register("flavortown", perms)
 }
 
 func TestSchema(t *testing.T) {
 	// some sides
-	sa, err := opsee_types.NewPermissions("flavortown", "peas", "nothing")
+	sa, err := graphqlproto_types.NewPermissions("flavortown", "peas", "nothing")
 	assert.Nil(t, err)
-	sb, err := opsee_types.NewPermissions("flavortown", "peas")
+	sb, err := graphqlproto_types.NewPermissions("flavortown", "peas")
 	assert.Nil(t, err)
-	sc, err := opsee_types.NewPermissions("flavortown", "cornbread")
+	sc, err := graphqlproto_types.NewPermissions("flavortown", "cornbread")
 	assert.Nil(t, err)
 
 	populatedMenu := &Menu{
@@ -36,9 +36,15 @@ func TestSchema(t *testing.T) {
 						"tips":     "frosted",
 					},
 				}},
-				PriceCents:     100,
-				CreatedAt:      &opsee_types.Timestamp{100, 100},
-				UpdatedAt:      &opsee_types.Timestamp{200, 200},
+				PriceCents: 100,
+				CreatedAt: &graphqlproto_types.Timestamp{
+					Seconds: 100,
+					Nanos:   100,
+				},
+				UpdatedAt: &graphqlproto_types.Timestamp{
+					Seconds: 200,
+					Nanos:   200,
+				},
 				Sides:          sa,
 				QualityControl: Quality_FAIR,
 			},
@@ -47,9 +53,15 @@ func TestSchema(t *testing.T) {
 					Name:      "coolwhip",
 					Sweetness: 9,
 				}},
-				PriceCents:     50,
-				CreatedAt:      &opsee_types.Timestamp{100, 100},
-				UpdatedAt:      &opsee_types.Timestamp{200, 200},
+				PriceCents: 50,
+				CreatedAt: &graphqlproto_types.Timestamp{
+					Seconds: 100,
+					Nanos:   100,
+				},
+				UpdatedAt: &graphqlproto_types.Timestamp{
+					Seconds: 200,
+					Nanos:   200,
+				},
 				Sides:          sb,
 				Nothing:        nil,
 				QualityControl: Quality_EXPENSIVE,
@@ -59,9 +71,15 @@ func TestSchema(t *testing.T) {
 					Name:      "coolwhip",
 					Sweetness: 9,
 				}},
-				PriceCents:     50,
-				CreatedAt:      &opsee_types.Timestamp{100, 100},
-				UpdatedAt:      &opsee_types.Timestamp{200, 200},
+				PriceCents: 50,
+				CreatedAt: &graphqlproto_types.Timestamp{
+					Seconds: 100,
+					Nanos:   100,
+				},
+				UpdatedAt: &graphqlproto_types.Timestamp{
+					Seconds: 200,
+					Nanos:   200,
+				},
 				Sides:          sc,
 				Nothing:        nil,
 				QualityControl: Quality_CHEAP,
