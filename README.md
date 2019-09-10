@@ -1,7 +1,13 @@
-opsee protobuf
+Protobuf GraphQL extension
 ==============
 
 This is a collection of "gadgets" (plugins) for the [gogo protobuf compiler](http://gogo.github.io/doc/) and a vanity binary for use with `protoc`.
+This is a fork from the (archived) [opsee protobuf](https://github.com/opsee/protobuf) project with the following improvements:
+- update dependencies to latest versions (proto3)
+- union fix for new graphql version
+- support for uint32
+- enum support 
+
 
 Current gadgets
 ---------------
