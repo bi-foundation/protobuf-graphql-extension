@@ -50,4 +50,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /v1.0.1
+              only: /v1.0.3
