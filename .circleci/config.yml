@@ -50,4 +50,4 @@ workflows:
             branches:
               ignore: /.*/
             tags:
-              only: /v1.0.3
+              only: /v[0-9]+(\.[0-9]+)*(-.*)*/
