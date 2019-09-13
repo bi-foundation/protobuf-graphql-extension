@@ -2,6 +2,11 @@
 # Make sure to check the documentation at http://goreleaser.com
 before:
   hooks:
+    # you may remove this if you don't use vgo
+    - go mod tidy
+    - go get -v -t -d ./...
+    - go install ./graphqlproto
+    - go install ./plugin/...
 builds:
   -
     main: ./protoc-gen-gogoopsee/main.go
