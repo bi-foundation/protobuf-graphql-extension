@@ -7,7 +7,6 @@ before:
     - go get -v -t -d ./...
     - go install ./graphqlproto
     - go install ./plugin/...
-    -
 builds:
   -
     main: ./protoc-gen-gogoopsee/main.go
