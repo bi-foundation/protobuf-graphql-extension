@@ -25,8 +25,8 @@ jobs:
       - run: go get -v -t -d ./...
       - run: go install ./graphqlproto
       - run: go install ./plugin/...
-      - run: go install ./protoc-gen-gogoopsee
       - run: go test -v ./...
+      - run: go build -o ./bin/protoc-gen-gogoopsee ./protoc-gen-gogoopsee
 
   github-release:
     docker:
